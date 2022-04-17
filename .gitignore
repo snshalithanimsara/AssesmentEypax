@@ -17,3 +17,8 @@
 /buildSrc/build/
 /app/debug/
 /app/release/
+/network/build/
+/localDb/build/
+/core/build/
+/app/build/
+/presentation/build/
