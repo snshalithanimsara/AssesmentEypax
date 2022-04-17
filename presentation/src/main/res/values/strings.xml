@@ -46,6 +46,7 @@ Please check your connection.</string>
     <string name="action_healthy">Healthy</string>
     <string name="action_technology">Technology</string>
     <string name="action_finance">Finance</string>
+    <string name="label_published_by">Published by</string>
 
 </resources>
 
