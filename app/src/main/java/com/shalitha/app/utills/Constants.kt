@@ -15,4 +15,5 @@ object AppModuleConstants {
 
 object IntentExtrasKey {
     const val EXTRA_KEY_SELECTED_CATEGORY = "EXTRA_KEY_SELECTED_CATEGORY"
+    const val EXTRA_KEY_IS_BREAKING_NEWS_SELECTED = "EXTRA_KEY_IS_BREAKING_NEWS_SELECTED"
 }

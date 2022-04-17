@@ -102,6 +102,10 @@
         <item name="android:textSize">18sp</item>
     </style>
 
+    <style name="ProximaNovaRegularColorBlack.size12">
+        <item name="android:textSize">12sp</item>
+    </style>
+
 
     <!--==========================START PROXIMA BOLD GRAY==================-->
 
@@ -164,6 +168,25 @@
     </style>
 
     <style name="ProximaNovaBoldColorWhite.size24">
+        <item name="android:textSize">24sp</item>
+    </style>
+
+    <!--==========================START PROXIMA BOLD CoralRed==================-->
+
+    <style name="ProximaNovaBoldColorCoralRed">
+        <item name="android:fontFamily">@font/proxima_nova_bold</item>
+        <item name="android:textColor">@color/colorCoralRed</item>
+    </style>
+
+    <style name="ProximaNovaBoldColorCoralRed.size16">
+        <item name="android:textSize">16sp</item>
+    </style>
+
+    <style name="ProximaNovaBoldColorCoralRed.size14">
+        <item name="android:textSize">14sp</item>
+    </style>
+
+    <style name="ProximaNovaBoldColorCoralRed.size24">
         <item name="android:textSize">24sp</item>
     </style>
 

@@ -9,6 +9,8 @@ import com.shalitha.app.databinding.ActivityHomePageBinding
 import com.shalitha.app.presentation.FetchNewsViewModel
 import com.shalitha.app.presentation.models.PArticlesItem
 import com.shalitha.app.presentation.search.SearchNewsActivity
+import com.shalitha.app.presentation.view_all.ViewAllNewsActivity
+import com.shalitha.app.utills.IntentExtrasKey
 import com.shalitha.app.utills.IntentExtrasKey.EXTRA_KEY_SELECTED_CATEGORY
 import com.shalitha.core.base.BaseActivity
 import com.shalitha.core.extensions.makeInVisible
@@ -62,6 +64,18 @@ class HomeActivity : BaseActivity() {
     private fun attachClickListeners() {
         mBinding.textSearchNews.setOnClickListener {
             startActivity<SearchNewsActivity> {
+                putExtra(EXTRA_KEY_SELECTED_CATEGORY, mSelectedTopNewsCategory)
+            }
+        }
+
+        mBinding.textViewAllBreakingNews.setOnClickListener {
+            startActivity<ViewAllNewsActivity> {
+                putExtra(IntentExtrasKey.EXTRA_KEY_IS_BREAKING_NEWS_SELECTED, true)
+            }
+        }
+        mBinding.textViewAllTopNews.setOnClickListener {
+            startActivity<ViewAllNewsActivity> {
+                putExtra(IntentExtrasKey.EXTRA_KEY_IS_BREAKING_NEWS_SELECTED, false)
                 putExtra(EXTRA_KEY_SELECTED_CATEGORY, mSelectedTopNewsCategory)
             }
         }
