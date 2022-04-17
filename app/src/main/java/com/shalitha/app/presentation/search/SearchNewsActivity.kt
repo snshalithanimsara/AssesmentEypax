@@ -2,11 +2,13 @@ package com.shalitha.app.presentation.search
 
 import android.annotation.SuppressLint
 import android.os.Bundle
+import android.widget.SearchView
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.shalitha.app.databinding.ActivitySearchNewsBinding
 import com.shalitha.app.presentation.FetchNewsViewModel
 import com.shalitha.app.presentation.home.HomeTopNewsListingAdapter
 import com.shalitha.app.presentation.models.PArticlesItem
+import com.shalitha.app.utills.IntentExtrasKey.EXTRA_KEY_SELECTED_CATEGORY
 import com.shalitha.core.base.BaseActivity
 import com.shalitha.core.extensions.makeInVisible
 import com.shalitha.core.extensions.makeVisible
@@ -19,6 +21,7 @@ class SearchNewsActivity : BaseActivity() {
 
     private val mFetchNewsViewModel: FetchNewsViewModel by inject()
     private lateinit var mBinding: ActivitySearchNewsBinding
+    private var mSelectedTopNewsCategory: String? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -27,9 +30,35 @@ class SearchNewsActivity : BaseActivity() {
 
 
     private fun init() {
+        readArguments()
         bindUi()
         setUpObservers()
+        attachClickListeners()
         makeFetchNewListRequest()
+    }
+
+    private fun attachClickListeners() {
+        mBinding.searchViewSearchNews.setOnQueryTextListener(object :
+            SearchView.OnQueryTextListener,
+            androidx.appcompat.widget.SearchView.OnQueryTextListener {
+            override fun onQueryTextSubmit(query: String?): Boolean {
+                makeFetchNewListRequest()
+                return false
+            }
+
+            override fun onQueryTextChange(p0: String?): Boolean {
+                return false
+            }
+
+        })
+    }
+
+    private fun readArguments() {
+        if (intent.hasExtra(EXTRA_KEY_SELECTED_CATEGORY)) {
+            intent.extras?.getString(EXTRA_KEY_SELECTED_CATEGORY).also { selectedCategory ->
+                mSelectedTopNewsCategory = selectedCategory
+            }
+        }
     }
 
     private fun setUpObservers() {
@@ -107,11 +136,14 @@ class SearchNewsActivity : BaseActivity() {
     @SuppressLint("MissingPermission")
     private fun makeFetchNewListRequest() {
         withNetwork({
-            mFetchNewsViewModel.makeGetNewsListRequest(searchQuery = getCurrentSearchQuery())
+            mFetchNewsViewModel.makeGetNewsListRequest(searchQuery = getSearchQueryWithSelectedCategory())
         }, {
             showInternetNotAvailableToast()
         })
     }
+
+    private fun getSearchQueryWithSelectedCategory() =
+        " ${mSelectedTopNewsCategory}+${getCurrentSearchQuery()}"
 
     private fun getCurrentSearchQuery() = mBinding.searchViewSearchNews.query.toString()
 

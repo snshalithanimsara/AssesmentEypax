@@ -7,7 +7,7 @@
     android:fitsSystemWindows="true">
 
     <EditText
-        android:id="@+id/edit_search_news"
+        android:id="@+id/search_view_search_news"
         style="@style/RoundedEditTextStyle"
         android:layout_width="match_parent"
         android:layout_height="48dp"
@@ -28,9 +28,9 @@
         android:layout_marginTop="8dp"
         android:layout_marginBottom="16dp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="@+id/edit_search_news"
-        app:layout_constraintStart_toStartOf="@+id/edit_search_news"
-        app:layout_constraintTop_toBottomOf="@+id/edit_search_news" />
+        app:layout_constraintEnd_toEndOf="@+id/search_view_search_news"
+        app:layout_constraintStart_toStartOf="@+id/search_view_search_news"
+        app:layout_constraintTop_toBottomOf="@+id/search_view_search_news" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
