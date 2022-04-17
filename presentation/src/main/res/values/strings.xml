@@ -42,6 +42,10 @@ Please check your connection.</string>
     <string name="msg_login_successful">Login Successfully!</string>
     <string name="label_news_wire_app">News Wire App</string>
     <string name="label_by">by</string>
+    <string name="label_no_results">No Results</string>
+    <string name="action_healthy">Healthy</string>
+    <string name="action_technology">Technology</string>
+    <string name="action_finance">Finance</string>
 
 </resources>
 

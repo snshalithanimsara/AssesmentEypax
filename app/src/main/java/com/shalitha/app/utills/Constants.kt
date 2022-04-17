@@ -12,3 +12,7 @@ package com.shalitha.app.utills
 object AppModuleConstants {
     const val CONST_FAKE_DELAY_LENGTH_FOR_UI_NAVIGATION = 2500L
 }
+
+object IntentExtrasKey {
+    const val EXTRA_KEY_SELECTED_CATEGORY = "EXTRA_KEY_SELECTED_CATEGORY"
+}

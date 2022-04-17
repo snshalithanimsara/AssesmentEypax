@@ -4,13 +4,16 @@ import android.annotation.SuppressLint
 import android.os.Bundle
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.shalitha.app.R
 import com.shalitha.app.databinding.ActivityHomePageBinding
 import com.shalitha.app.presentation.FetchNewsViewModel
 import com.shalitha.app.presentation.models.PArticlesItem
-import com.shalitha.app.presentation.models.PUser
+import com.shalitha.app.presentation.search.SearchNewsActivity
+import com.shalitha.app.utills.IntentExtrasKey.EXTRA_KEY_SELECTED_CATEGORY
 import com.shalitha.core.base.BaseActivity
 import com.shalitha.core.extensions.makeInVisible
 import com.shalitha.core.extensions.makeVisible
+import com.shalitha.core.extensions.startActivity
 import com.shalitha.core.extensions.withNetwork
 import com.shalitha.network.state_models.Resource
 import com.shalitha.network.state_models.ResourceState
@@ -20,6 +23,7 @@ class HomeActivity : BaseActivity() {
 
     private val mFetchNewsViewModel: FetchNewsViewModel by inject()
     private lateinit var mBinding: ActivityHomePageBinding
+    private var mSelectedTopNewsCategory: String? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -30,8 +34,13 @@ class HomeActivity : BaseActivity() {
     private fun init() {
         bindUi()
         setUpObservers()
+        attachClickListeners()
+        setDefaultTopNewsCategorySelected()
         makeFetchBreakingNewsListRequest()
-        makeFetchNewListRequest()
+    }
+
+    private fun setDefaultTopNewsCategorySelected() {
+        mBinding.radioButtonHealthy.isChecked = true
     }
 
     private fun setUpObservers() {
@@ -50,18 +59,28 @@ class HomeActivity : BaseActivity() {
         setContentView(mBinding.root)
     }
 
-    private fun observerLoggedInUserResponse(signedInResponseState: Resource<PUser>?) {
-        when (signedInResponseState?.state) {
-            ResourceState.LOADING -> {
-
+    private fun attachClickListeners() {
+        mBinding.textSearchNews.setOnClickListener {
+            startActivity<SearchNewsActivity> {
+                putExtra(EXTRA_KEY_SELECTED_CATEGORY, mSelectedTopNewsCategory)
             }
+        }
 
-            ResourceState.SUCCESS -> {
-                signedInResponseState.data?.let { signedInUser ->
+        mBinding.radioGroupTopNewsCategory.setOnCheckedChangeListener { radioGroup, selectedRadioButtonId ->
+            when (selectedRadioButtonId) {
+                R.id.radio_button_healthy -> {
+                    mSelectedTopNewsCategory = getString(R.string.action_healthy)
+                }
 
+                R.id.radio_button_finance -> {
+                    mSelectedTopNewsCategory = getString(R.string.action_finance)
+                }
+
+                R.id.radio_button_technology -> {
+                    mSelectedTopNewsCategory = getString(R.string.action_technology)
                 }
             }
-
+            makeFetchNewListRequest()
         }
     }
 
@@ -99,6 +118,8 @@ class HomeActivity : BaseActivity() {
     private fun observeFetchTopNewsListRequest(resource: Resource<List<PArticlesItem>?>?) {
         when (resource?.state) {
             ResourceState.LOADING -> {
+                hideTopNewsListingRecycleView()
+                showTopNewsShimmerLoading()
                 startTopNewsShimmerLoading()
             }
 
@@ -138,7 +159,7 @@ class HomeActivity : BaseActivity() {
     private fun populateTopNewsListingRecycleView(pTopNewsListResponse: List<PArticlesItem>?) {
         pTopNewsListResponse?.toMutableList()?.let { topNewsList ->
             mBinding.recycleTopNews.layoutManager =
-                LinearLayoutManager(this@HomeActivity, RecyclerView.HORIZONTAL, false)
+                LinearLayoutManager(this@HomeActivity)
             mBinding.recycleTopNews.adapter =
                 HomeTopNewsListingAdapter(
                     topNewsListItemResponseList = topNewsList,
@@ -169,6 +190,10 @@ class HomeActivity : BaseActivity() {
         mBinding.recycleTopNews.makeVisible()
     }
 
+    private fun hideTopNewsListingRecycleView() {
+        mBinding.recycleTopNews.makeInVisible()
+    }
+
     private fun hideTopNewsShimmerLoading() {
         mBinding.shimmerTopNews.makeInVisible()
     }
@@ -181,11 +206,15 @@ class HomeActivity : BaseActivity() {
         mBinding.shimmerTopNews.startShimmer()
     }
 
+    private fun showTopNewsShimmerLoading() {
+        mBinding.shimmerTopNews.makeVisible()
+    }
+
 
     @SuppressLint("MissingPermission")
     private fun makeFetchNewListRequest() {
         withNetwork({
-            mFetchNewsViewModel.makeGetNewsListRequest(searchQuery = null)
+            mFetchNewsViewModel.makeGetNewsListRequest(searchQuery = mSelectedTopNewsCategory)
         }, {
             showInternetNotAvailableToast()
         })
