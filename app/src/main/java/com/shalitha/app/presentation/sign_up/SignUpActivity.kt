@@ -99,7 +99,7 @@ class SignUpActivity : BaseActivity() {
         firstName = mBinding.editFirstName.getStringTrim(),
         secondName = mBinding.editLastName.getStringTrim(),
         email = mBinding.editEmail.getStringTrim(),
-        passwordToken = mBinding.editPassword.getStringTrim().generateMd5Hash()
+        password = mBinding.editPassword.getStringTrim().generateMd5Hash()
     )
 
     private fun isFormValid(): Boolean {

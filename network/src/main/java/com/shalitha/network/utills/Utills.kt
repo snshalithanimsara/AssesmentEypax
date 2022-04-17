@@ -16,5 +16,9 @@ inline fun <reified T> getKoinInstance(): T {
 
 
 fun Int?.checkIsResultSuccess(): Boolean {
-    return this == 1
+    this?.let { resultInt ->
+        return resultInt > 0
+    } ?: kotlin.run {
+        return false
+    }
 }

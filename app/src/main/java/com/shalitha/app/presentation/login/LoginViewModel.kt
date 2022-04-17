@@ -25,9 +25,13 @@ class LoginViewModel(
         viewModelScope.launch {
             userSignedInResponseLiveData.setLoading()
             mAuthUseCase.findUserWithThisEmail(email = email)?.also { userWithTheEmail ->
-                if ((userWithTheEmail.passwordToken == passwordString)) {
-                    setThisUserAsSignedInUser(signedInUser = userWithTheEmail)
-                    userSignedInResponseLiveData.setSuccess(data = userWithTheEmail, message = null)
+                if ((userWithTheEmail.password == passwordString)) {
+                    setThisUserAsSignedInUser(signedInUser = userWithTheEmail).also { result ->
+                        userSignedInResponseLiveData.setSuccess(
+                            data = userWithTheEmail,
+                            message = null
+                        )
+                    }
                 } else
                     userSignedInResponseLiveData.setSuccess(data = null, message = null)
             } ?: kotlin.run {
@@ -35,8 +39,7 @@ class LoginViewModel(
             }
         }
 
-    private suspend fun setThisUserAsSignedInUser(signedInUser: PUser) {
-        signedInUser.isCurrentLoggedInUser = 1
-        mAuthUseCase.updateUser(pUser = signedInUser)
+    private suspend fun setThisUserAsSignedInUser(signedInUser: PUser): Boolean {
+        return mAuthUseCase.setThisAsCurrentLoggedInUser(email = signedInUser.email)
     }
 }

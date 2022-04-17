@@ -8,6 +8,6 @@ data class PUser(
     val firstName: String,
     val secondName: String,
     val email: String,
-    val passwordToken: String,
+    val password: String,
     var isCurrentLoggedInUser: Int = 0
 )

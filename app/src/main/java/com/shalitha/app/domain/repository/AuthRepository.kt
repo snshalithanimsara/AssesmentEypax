@@ -7,7 +7,7 @@ interface AuthRepository {
 
     suspend fun createNewUser(pUser: PUser): Boolean
 
-    suspend fun updateUser(pUser: PUser): Boolean
+    suspend fun setThisAsCurrentLoggedInUser(email: String): Boolean
 
     suspend fun getCurrentLoggedInUser(): PUser?
 

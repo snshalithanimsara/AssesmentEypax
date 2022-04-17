@@ -9,7 +9,7 @@ interface AuthLocalDataSource {
 
     suspend fun getCurrentLoggedInUser(): PUser?
 
-    suspend fun updateUser(pUser: PUser): Boolean
+    suspend fun setThisAsCurrentLoggedInUser(email: String): Boolean
 
     suspend fun findUserWithThisEmail(email: String): PUser?
 
