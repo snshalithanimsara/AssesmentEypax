@@ -71,6 +71,6 @@ val viewModelModule: Module = module {
         LoginViewModel(mAuthUseCase = get())
     }
     viewModel {
-        FetchNewsViewModel(mNewsUseCase = get())
+        FetchNewsViewModel(mNewsUseCase = get(), mAuthUseCase = get())
     }
 }

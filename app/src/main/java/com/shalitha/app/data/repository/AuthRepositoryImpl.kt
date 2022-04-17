@@ -18,4 +18,7 @@ class AuthRepositoryImpl(private val mAuthLocalDataSource: AuthLocalDataSource) 
 
     override suspend fun findUserWithThisEmail(email: String): PUser? =
         mAuthLocalDataSource.findUserWithThisEmail(email = email)
+
+    override suspend fun logoutCurrentLoggedInUser(): Boolean =
+        mAuthLocalDataSource.logoutCurrentLoggedInUser()
 }

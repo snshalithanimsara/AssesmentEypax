@@ -3,6 +3,7 @@ package com.shalitha.app.presentation
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
+import com.shalitha.app.domain.usecases.AuthUseCase
 import com.shalitha.app.domain.usecases.NewsUseCase
 import com.shalitha.app.presentation.models.PArticlesItem
 import com.shalitha.core.extensions.setError
@@ -14,11 +15,13 @@ import kotlinx.coroutines.launch
 
 
 class FetchNewsViewModel(
-    private val mNewsUseCase: NewsUseCase
+    private val mNewsUseCase: NewsUseCase,
+    private val mAuthUseCase: AuthUseCase
 ) : ViewModel() {
 
     var fetchNewsListResponseLiveData = MutableLiveData<Resource<List<PArticlesItem>?>>()
     var fetchBreakingNewsListResponseLiveData = MutableLiveData<Resource<List<PArticlesItem>?>>()
+    var logoutUserResponseLiveData = MutableLiveData<Resource<Boolean>>()
 
 
     fun makeGetNewsListRequest(searchQuery: String?) = viewModelScope.launch {
@@ -64,5 +67,16 @@ class FetchNewsViewModel(
             )
             return@launch
         }
+    }
+
+    fun makeCurrentUserLoggedOut() = viewModelScope.launch {
+        logoutUserResponseLiveData.setLoading()
+        mAuthUseCase.logoutCurrentLoggedInUser()
+            .also { result ->
+                logoutUserResponseLiveData.setSuccess(
+                    data = result,
+                    message = null
+                )
+            }
     }
 }

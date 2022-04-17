@@ -13,5 +13,7 @@ interface AuthRepository {
 
     suspend fun findUserWithThisEmail(email: String): PUser?
 
+    suspend fun logoutCurrentLoggedInUser(): Boolean
+
 
 }

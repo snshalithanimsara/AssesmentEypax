@@ -21,4 +21,7 @@ interface UserDao {
     @Query("SELECT *  FROM user where email=(:emailString)")
     suspend fun findUserWithThisEmail(emailString: String): User?
 
+    @Query("UPDATE user SET isCurrentUser = 0 WHERE isCurrentUser =1")
+    suspend fun logoutCurrentLoggedInUser(): Int
+
 }

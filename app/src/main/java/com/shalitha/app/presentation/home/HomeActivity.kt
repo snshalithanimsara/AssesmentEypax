@@ -8,6 +8,7 @@ import com.shalitha.app.R
 import com.shalitha.app.databinding.ActivityHomePageBinding
 import com.shalitha.app.presentation.FetchNewsViewModel
 import com.shalitha.app.presentation.detail_news.DetailNewsActivity
+import com.shalitha.app.presentation.login.LoginActivity
 import com.shalitha.app.presentation.models.PArticlesItem
 import com.shalitha.app.presentation.search.SearchNewsActivity
 import com.shalitha.app.presentation.view_all.ViewAllNewsActivity
@@ -55,6 +56,10 @@ class HomeActivity : BaseActivity() {
         mFetchNewsViewModel.fetchNewsListResponseLiveData.observe(
             this
         ) { observeFetchTopNewsListRequest(it) }
+
+        mFetchNewsViewModel.logoutUserResponseLiveData.observe(
+            this
+        ) { observeUserLogout(it) }
     }
 
 
@@ -64,6 +69,10 @@ class HomeActivity : BaseActivity() {
     }
 
     private fun attachClickListeners() {
+        mBinding.textLogout.setOnClickListener {
+            mFetchNewsViewModel.makeCurrentUserLoggedOut()
+        }
+
         mBinding.textSearchNews.setOnClickListener {
             startActivity<SearchNewsActivity> {
                 putExtra(EXTRA_KEY_SELECTED_CATEGORY, mSelectedTopNewsCategory)
@@ -123,6 +132,38 @@ class HomeActivity : BaseActivity() {
                 stopBreakingNewsShimmerLoading()
                 showAlertWithMessage(alertMessage = resource.message!!)
             }
+        }
+    }
+
+    private fun observeUserLogout(resource: Resource<Boolean>?) {
+        when (resource?.state) {
+            ResourceState.LOADING -> {
+                showProgressDialog()
+            }
+
+
+            ResourceState.SUCCESS -> {
+                hideProgressDialog()
+                resource.data?.let { result ->
+                    if (result)
+                        navigateToLogin()
+                    else
+                        showAlertWithMessage(alertMessage = getString(R.string.msg_failed_to_logout))
+
+                }
+            }
+
+            ResourceState.ERROR -> {
+                hideProgressDialog()
+                stopBreakingNewsShimmerLoading()
+                showAlertWithMessage(alertMessage = resource.message!!)
+            }
+        }
+    }
+
+    private fun navigateToLogin() {
+        startActivity<LoginActivity> { }.also {
+            finish()
         }
     }
 

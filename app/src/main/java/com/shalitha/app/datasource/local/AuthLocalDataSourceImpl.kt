@@ -20,6 +20,9 @@ class AuthLocalDataSourceImpl(private val mUserDao: UserDao) :
     override suspend fun getCurrentLoggedInUser(): PUser? =
         mUserDao.getCurrentLoggedInUser()?.mapTo()
 
+    override suspend fun logoutCurrentLoggedInUser(): Boolean =
+        mUserDao.logoutCurrentLoggedInUser().checkIsResultSuccess()
+
     override suspend fun updateUser(pUser: PUser): Boolean =
         mUserDao.updateUser(pUser.mapToLocalUser()).checkIsResultSuccess()
 

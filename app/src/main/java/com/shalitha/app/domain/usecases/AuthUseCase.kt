@@ -16,4 +16,6 @@ class AuthUseCase(private val mAuthRepository: AuthRepository) {
 
     suspend fun updateUser(pUser: PUser): Boolean = mAuthRepository.updateUser(pUser = pUser)
 
+    suspend fun logoutCurrentLoggedInUser(): Boolean = mAuthRepository.logoutCurrentLoggedInUser()
+
 }
