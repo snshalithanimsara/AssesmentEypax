@@ -6,6 +6,7 @@
   - Android Kotlin
   - Kotlin Extensions
   - Kotlin Coroutines
+  - Android Room
   - Koin Dependency Injection
   - Rx Java For Reactive Programing
   - Retrofit For Network Requests
@@ -21,6 +22,7 @@
   - Presentation
   - Core
   - BuilrSrc
+  - localDb
 
  * **NOTE :** All above modules except {BuildSrc and app} are similar to libraries .They can  be them  to any other module and use their features.
 
@@ -37,3 +39,6 @@ All Common Drawables , Colors and Styles and Strings are  including the App Them
 
 #### Core
 All the Base Components and The Boilerplate Codes are included in the module + Kotlin Extensions
+
+#### localDb
+Local Room Db is Created as a separate module ..to maintain the accessibility with in every module
