@@ -156,7 +156,7 @@ object ApiDemoServer {
 }
 
 object API_KEY {
-    const val api_key = "\"2b7b61d8065f4ec09d7c9248ee54f4d7\""
+    const val api_key = "\"1763c14b4ba24809af0fdc87dd5f8fcf\""
 }
 
 
