@@ -49,7 +49,11 @@ class SearchNewsActivity : BaseActivity() {
                 return false
             }
 
-            override fun onQueryTextChange(p0: String?): Boolean {
+            override fun onQueryTextChange(query: String?): Boolean {
+                query?.let {
+                    if (it.isEmpty())
+                        makeFetchNewListRequest()
+                }
                 return false
             }
 
