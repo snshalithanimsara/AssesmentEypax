@@ -28,3 +28,12 @@ fun executeThisWithDelay(
         function()
     }, delayingMillis)
 }
+
+
+fun Int?.checkIsResultSuccess(): Boolean {
+    this?.let { resultInt ->
+        return resultInt > 0
+    } ?: kotlin.run {
+        return false
+    }
+}

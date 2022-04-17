@@ -3,9 +3,9 @@ package com.shalitha.app.datasource.local
 
 import com.shalitha.app.data.datasource.AuthLocalDataSource
 import com.shalitha.app.presentation.models.PUser
+import com.shalitha.app.utills.checkIsResultSuccess
 import com.shalitha.core.extensions.mapTo
 import com.shalitha.localdb.dao.UserDao
-import com.shalitha.network.utills.checkIsResultSuccess
 
 
 class AuthLocalDataSourceImpl(private val mUserDao: UserDao) :

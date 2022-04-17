@@ -13,12 +13,3 @@ inline fun <reified T> getKoinInstance(): T {
         val value: T by inject()
     }.value
 }
-
-
-fun Int?.checkIsResultSuccess(): Boolean {
-    this?.let { resultInt ->
-        return resultInt > 0
-    } ?: kotlin.run {
-        return false
-    }
-}
