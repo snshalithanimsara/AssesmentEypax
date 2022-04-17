@@ -7,6 +7,8 @@ import coil.load
 import com.shalitha.app.R
 import com.shalitha.app.databinding.ItemTopNewsListingBinding
 import com.shalitha.app.presentation.models.PArticlesItem
+import com.shalitha.app.utills.parseServerTimesStampDateStringAsDate
+import com.shalitha.core.extensions.toDateEDMY
 
 class HomeTopNewsListingAdapter(
     var topNewsListItemResponseList: MutableList<PArticlesItem>,
@@ -39,7 +41,12 @@ class HomeTopNewsListingAdapter(
                     "${itemView.context.getString(R.string.label_by)} ${breakingNewsItem.author}"
 
                 itemBinding.textTitle.text = breakingNewsItem.title
-                itemBinding.textNewsDate.text = breakingNewsItem.publishedAt
+                breakingNewsItem.publishedAt?.parseServerTimesStampDateStringAsDate()
+                    .also { publishedDate ->
+                        publishedDate.toDateEDMY().also { formattedDateString ->
+                            itemBinding.textNewsDate.text = formattedDateString
+                        }
+                    }
 
                 itemView.setOnClickListener {
                     onTopNewsItemClick?.invoke(breakingNewsItem)

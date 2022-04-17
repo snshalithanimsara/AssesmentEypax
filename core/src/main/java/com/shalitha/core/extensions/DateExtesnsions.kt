@@ -163,6 +163,11 @@ fun Date?.toDateEMY(): String {
     return dateAsString(this, pattern)
 }
 
+fun Date?.toDateEDMY(): String {
+    val pattern = "EEEE,dd MMMM YYYY"
+    return dateAsString(this, pattern)
+}
+
 // -------------------------- Day --------------------------
 
 fun Date?.toDay(): String {

@@ -6,7 +6,9 @@ import com.shalitha.app.R
 import com.shalitha.app.databinding.ActivityNewsDetailPageBinding
 import com.shalitha.app.presentation.models.PArticlesItem
 import com.shalitha.app.utills.IntentExtrasKey
+import com.shalitha.app.utills.parseServerTimesStampDateStringAsDate
 import com.shalitha.core.base.BaseActivity
+import com.shalitha.core.extensions.toDateEDMY
 
 class DetailNewsActivity : BaseActivity() {
 
@@ -55,7 +57,13 @@ class DetailNewsActivity : BaseActivity() {
                 "${getString(R.string.label_published_by)} ${pArticle.author}"
             mBinding.textContent.text = pArticle.content
             mBinding.textNewsTitle.text = pArticle.title
-            mBinding.textPublishAt.text = pArticle.publishedAt
+            
+            pArticle.publishedAt?.parseServerTimesStampDateStringAsDate()
+                .also { publishedDate ->
+                    publishedDate.toDateEDMY().also { formattedDateString ->
+                        mBinding.textPublishAt.text = formattedDateString
+                    }
+                }
 
             loadNewsPreviewImage(pArticlesItem = pArticle)
         }
