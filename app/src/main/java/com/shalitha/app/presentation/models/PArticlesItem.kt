@@ -1,8 +1,10 @@
 package com.shalitha.app.presentation.models
 
+import android.os.Parcelable
 import com.google.gson.annotations.SerializedName
-import javax.crypto.spec.PSource
+import kotlinx.parcelize.Parcelize
 
+@Parcelize
 data class PArticlesItem(
 
     @field:SerializedName("publishedAt")
@@ -28,4 +30,4 @@ data class PArticlesItem(
 
     @field:SerializedName("content")
     val content: String? = null
-)
+) : Parcelable

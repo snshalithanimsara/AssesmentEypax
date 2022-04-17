@@ -6,12 +6,15 @@ import android.widget.SearchView
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.shalitha.app.databinding.ActivitySearchNewsBinding
 import com.shalitha.app.presentation.FetchNewsViewModel
+import com.shalitha.app.presentation.detail_news.DetailNewsActivity
 import com.shalitha.app.presentation.home.HomeTopNewsListingAdapter
 import com.shalitha.app.presentation.models.PArticlesItem
+import com.shalitha.app.utills.IntentExtrasKey
 import com.shalitha.app.utills.IntentExtrasKey.EXTRA_KEY_SELECTED_CATEGORY
 import com.shalitha.core.base.BaseActivity
 import com.shalitha.core.extensions.makeInVisible
 import com.shalitha.core.extensions.makeVisible
+import com.shalitha.core.extensions.startActivity
 import com.shalitha.core.extensions.withNetwork
 import com.shalitha.network.state_models.Resource
 import com.shalitha.network.state_models.ResourceState
@@ -110,10 +113,16 @@ class SearchNewsActivity : BaseActivity() {
                 HomeTopNewsListingAdapter(
                     topNewsListItemResponseList = topNewsList,
                     onTopNewsItemClick = { pArticlesItem ->
+                        navigateToDetailNewsView(pArticlesItem = pArticlesItem)
 
                     })
         }
+    }
 
+    private fun navigateToDetailNewsView(pArticlesItem: PArticlesItem) {
+        startActivity<DetailNewsActivity> {
+            putExtra(IntentExtrasKey.EXTRA_KEY_SELECTED_NEWS, pArticlesItem)
+        }
     }
 
     private fun showSearchNewsListingRecycleView() {

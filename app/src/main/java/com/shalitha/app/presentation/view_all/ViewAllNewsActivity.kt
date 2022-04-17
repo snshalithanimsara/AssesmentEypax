@@ -6,12 +6,14 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.shalitha.app.R
 import com.shalitha.app.databinding.ActivityNewsListingPageBinding
 import com.shalitha.app.presentation.FetchNewsViewModel
+import com.shalitha.app.presentation.detail_news.DetailNewsActivity
 import com.shalitha.app.presentation.models.PArticlesItem
 import com.shalitha.app.utills.IntentExtrasKey
 import com.shalitha.app.utills.IntentExtrasKey.EXTRA_KEY_IS_BREAKING_NEWS_SELECTED
 import com.shalitha.core.base.BaseActivity
 import com.shalitha.core.extensions.makeInVisible
 import com.shalitha.core.extensions.makeVisible
+import com.shalitha.core.extensions.startActivity
 import com.shalitha.core.extensions.withNetwork
 import com.shalitha.network.state_models.Resource
 import com.shalitha.network.state_models.ResourceState
@@ -160,10 +162,16 @@ class ViewAllNewsActivity : BaseActivity() {
                 ViewAllNewsListingAdapter(
                     newsListItemResponseList = newsList,
                     onNewsItemClick = { pArticlesItem ->
-
+                        navigateToDetailNewsView(pArticlesItem = pArticlesItem)
                     })
         }
 
+    }
+
+    private fun navigateToDetailNewsView(pArticlesItem: PArticlesItem) {
+        startActivity<DetailNewsActivity> {
+            putExtra(IntentExtrasKey.EXTRA_KEY_SELECTED_NEWS, pArticlesItem)
+        }
     }
 
     private fun showNewsListingRecycleView() {

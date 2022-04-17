@@ -7,11 +7,13 @@ import androidx.recyclerview.widget.RecyclerView
 import com.shalitha.app.R
 import com.shalitha.app.databinding.ActivityHomePageBinding
 import com.shalitha.app.presentation.FetchNewsViewModel
+import com.shalitha.app.presentation.detail_news.DetailNewsActivity
 import com.shalitha.app.presentation.models.PArticlesItem
 import com.shalitha.app.presentation.search.SearchNewsActivity
 import com.shalitha.app.presentation.view_all.ViewAllNewsActivity
 import com.shalitha.app.utills.IntentExtrasKey
 import com.shalitha.app.utills.IntentExtrasKey.EXTRA_KEY_SELECTED_CATEGORY
+import com.shalitha.app.utills.IntentExtrasKey.EXTRA_KEY_SELECTED_NEWS
 import com.shalitha.core.base.BaseActivity
 import com.shalitha.core.extensions.makeInVisible
 import com.shalitha.core.extensions.makeVisible
@@ -119,9 +121,7 @@ class HomeActivity : BaseActivity() {
 
             ResourceState.ERROR -> {
                 stopBreakingNewsShimmerLoading()
-                showAlertWithMessage(alertMessage = resource.message!!, okAction = {
-
-                })
+                showAlertWithMessage(alertMessage = resource.message!!)
             }
         }
     }
@@ -149,9 +149,7 @@ class HomeActivity : BaseActivity() {
 
             ResourceState.ERROR -> {
                 stopBreakingNewsShimmerLoading()
-                showAlertWithMessage(alertMessage = resource.message!!, okAction = {
-
-                })
+                showAlertWithMessage(alertMessage = resource.message!!)
             }
         }
     }
@@ -164,10 +162,16 @@ class HomeActivity : BaseActivity() {
                 BreakingNewsListingAdapter(
                     breakingNewsListItemResponseList = breakingNewsList,
                     onBreakingNewsItemClick = { pArticlesItem ->
-
+                        navigateToDetailNewsView(pArticlesItem = pArticlesItem)
                     })
         }
 
+    }
+
+    private fun navigateToDetailNewsView(pArticlesItem: PArticlesItem) {
+        startActivity<DetailNewsActivity> {
+            putExtra(EXTRA_KEY_SELECTED_NEWS, pArticlesItem)
+        }
     }
 
     private fun populateTopNewsListingRecycleView(pTopNewsListResponse: List<PArticlesItem>?) {
@@ -178,7 +182,7 @@ class HomeActivity : BaseActivity() {
                 HomeTopNewsListingAdapter(
                     topNewsListItemResponseList = topNewsList,
                     onTopNewsItemClick = { pArticlesItem ->
-
+                        navigateToDetailNewsView(pArticlesItem = pArticlesItem)
                     })
         }
 
