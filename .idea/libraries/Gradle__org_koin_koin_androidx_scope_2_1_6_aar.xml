@@ -1,0 +1,29 @@
+<component name="libraryTable">
+  <library name="Gradle: org.koin:koin-androidx-scope:2.1.6@aar">
+    <CLASSES>
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/dec652325204179ca52af83078522588/jetified-koin-androidx-scope-2.1.6/res" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/552d7d86b083d317cfd190e53939d126/jetified-koin-androidx-scope-2.1.6/res" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/e5720c106ad610fe18f45be16eb7415f/jetified-koin-androidx-scope-2.1.6/res" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/e6dd3f52a2927af2927e60499f60c6e2/jetified-koin-androidx-scope-2.1.6/res" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/ba3191bfe0008b1a19344ac067be1ee2/jetified-koin-androidx-scope-2.1.6/res" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/a56d2756e801b167c30e2ebb7d8d2e52/jetified-koin-androidx-scope-2.1.6/res" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/f1f306da068458f32fc5e05df4c88de5/jetified-koin-androidx-scope-2.1.6/res" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/ac79460dd55c6ff7f54bc6a8196f7291/jetified-koin-androidx-scope-2.1.6/res" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/a97f511c15eea63401b6ac9c7e84b534/jetified-koin-androidx-scope-2.1.6/res" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/10eba89992c543157647672c97d1f8f1/jetified-koin-androidx-scope-2.1.6/res" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/fb13ad32ed2ad5e523c1ee6699c82f4c/jetified-koin-androidx-scope-2.1.6/res" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/468f694cc380722512e1a675ac44eaa2/jetified-koin-androidx-scope-2.1.6/res" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/573d9c25ec21835579ca66db55ba7f66/jetified-koin-androidx-scope-2.1.6/res" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/029b206a0b95874fd0dc0c29624fb6e6/jetified-koin-androidx-scope-2.1.6/res" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/9aa822a404e84313ea5b076dd635c368/jetified-koin-androidx-scope-2.1.6/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/9aa822a404e84313ea5b076dd635c368/jetified-koin-androidx-scope-2.1.6/AndroidManifest.xml" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/9aa822a404e84313ea5b076dd635c368/jetified-koin-androidx-scope-2.1.6/res" />
+    </CLASSES>
+    <JAVADOC>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.koin/koin-androidx-scope/2.1.6/1b4f283c6d56689432c6c871b226648821bba08f/koin-androidx-scope-2.1.6-javadoc.jar!/" />
+    </JAVADOC>
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.koin/koin-androidx-scope/2.1.6/ff5e5058e86055796b3900eb9f56483fb9cb1a78/koin-androidx-scope-2.1.6-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

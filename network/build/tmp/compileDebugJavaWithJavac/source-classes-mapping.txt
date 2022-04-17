@@ -1,0 +1,2 @@
+com/shalitha/network/BuildConfig.java
+ com.shalitha.network.BuildConfig

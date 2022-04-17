@@ -1,0 +1,2 @@
+com/shalitha/presentation/BuildConfig.java
+ com.shalitha.presentation.BuildConfig

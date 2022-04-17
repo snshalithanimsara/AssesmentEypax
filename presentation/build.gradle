@@ -1,0 +1,24 @@
+apply plugin: 'com.android.library'
+apply plugin: 'kotlin-android'
+
+
+dependencies {
+    // Android support
+    implementation Androidx.appcompat
+
+    implementation Androidx.material_design
+}
+
+android {
+    compileSdkVersion Versions.compileSdk
+
+    buildTypes {
+        release {}
+        debug {}
+    }
+
+    defaultConfig {
+        minSdkVersion Versions.minSdk
+        targetSdkVersion Versions.targetSdk
+    }
+}

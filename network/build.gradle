@@ -1,0 +1,68 @@
+apply plugin: 'com.android.library'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-kapt'
+
+
+dependencies {
+
+    implementation fileTree(dir: "libs", include: ["*.jar"])
+    implementation project(Modules.presentation)
+
+
+    implementation Kotlin.stdlib
+
+
+    // OkHttp and Retrofit
+    implementation Okhttp.runtime
+    implementation Okhttp.logging
+    implementation Retrofit.runtime
+    implementation Retrofit.rxjava2
+    implementation Retrofit.gson
+    implementation Retrofit.curl_logger
+
+    // RxJava and RxAndroid
+    implementation Reactivex.rxjava
+
+    //Koin for DI
+    implementation Koin.android
+    implementation Koin.scope
+    implementation Koin.ext
+
+
+}
+
+android {
+    compileSdkVersion Versions.compileSdk
+
+    defaultConfig {
+        minSdkVersion Versions.minSdk
+        targetSdkVersion Versions.targetSdk
+    }
+
+
+    buildTypes {
+
+        libraryVariants.all { variant ->
+            buildConfigField "String", "API_KEY", "${API_KEY.api_key}"
+        }
+
+        release {
+            minifyEnabled false
+            debuggable false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+
+//            Live Server URL
+            buildConfigField "String", "API_URL", "${ApiLiveServer.url}"
+        }
+
+        debug {
+            debuggable true
+            minifyEnabled false
+
+//            Demo Server URL
+            buildConfigField "String", "API_URL", "${ApiDemoServer.url}"
+        }
+    }
+
+
+}

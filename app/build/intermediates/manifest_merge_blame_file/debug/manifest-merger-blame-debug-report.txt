@@ -1,0 +1,117 @@
+1<?xml version="1.0" encoding="utf-8"?>
+2<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+3    package="com.shalitha.assessment"
+4    android:versionCode="1"
+5    android:versionName="1.0.1" >
+6
+7    <uses-sdk
+8        android:minSdkVersion="19"
+8-->/Users/shalithasamarasinghe/Projects/InterviewTask/Eyepax/Assement/app/src/main/AndroidManifest.xml
+9        android:targetSdkVersion="31" />
+9-->/Users/shalithasamarasinghe/Projects/InterviewTask/Eyepax/Assement/app/src/main/AndroidManifest.xml
+10
+11    <!-- Network Permissions -->
+12    <uses-permission android:name="android.permission.INTERNET" />
+12-->/Users/shalithasamarasinghe/Projects/InterviewTask/Eyepax/Assement/app/src/main/AndroidManifest.xml:8:5-67
+12-->/Users/shalithasamarasinghe/Projects/InterviewTask/Eyepax/Assement/app/src/main/AndroidManifest.xml:8:22-64
+13    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+13-->/Users/shalithasamarasinghe/Projects/InterviewTask/Eyepax/Assement/app/src/main/AndroidManifest.xml:9:5-79
+13-->/Users/shalithasamarasinghe/Projects/InterviewTask/Eyepax/Assement/app/src/main/AndroidManifest.xml:9:22-76
+14
+15    <application
+15-->/Users/shalithasamarasinghe/Projects/InterviewTask/Eyepax/Assement/app/src/main/AndroidManifest.xml:12:5-48:19
+16        android:name="com.shalitha.app.ApplicationCore"
+16-->/Users/shalithasamarasinghe/Projects/InterviewTask/Eyepax/Assement/app/src/main/AndroidManifest.xml:13:9-56
+17        android:allowBackup="false"
+17-->/Users/shalithasamarasinghe/Projects/InterviewTask/Eyepax/Assement/app/src/main/AndroidManifest.xml:14:9-36
+18        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
+18-->[androidx.core:core:1.7.0] /Users/shalithasamarasinghe/.gradle/caches/transforms-2/files-2.1/cb08d9078a90b5b44c081dc9e6dead4f/core-1.7.0/AndroidManifest.xml:24:18-86
+19        android:debuggable="true"
+20        android:icon="@mipmap/ic_launcher"
+20-->/Users/shalithasamarasinghe/Projects/InterviewTask/Eyepax/Assement/app/src/main/AndroidManifest.xml:15:9-43
+21        android:label="@string/app_name"
+21-->/Users/shalithasamarasinghe/Projects/InterviewTask/Eyepax/Assement/app/src/main/AndroidManifest.xml:16:9-41
+22        android:requestLegacyExternalStorage="true"
+22-->/Users/shalithasamarasinghe/Projects/InterviewTask/Eyepax/Assement/app/src/main/AndroidManifest.xml:17:9-52
+23        android:roundIcon="@mipmap/ic_launcher_round"
+23-->/Users/shalithasamarasinghe/Projects/InterviewTask/Eyepax/Assement/app/src/main/AndroidManifest.xml:18:9-54
+24        android:supportsRtl="true"
+24-->/Users/shalithasamarasinghe/Projects/InterviewTask/Eyepax/Assement/app/src/main/AndroidManifest.xml:19:9-35
+25        android:testOnly="true"
+26        android:theme="@style/AppTheme" >
+26-->/Users/shalithasamarasinghe/Projects/InterviewTask/Eyepax/Assement/app/src/main/AndroidManifest.xml:20:9-40
+27        <activity
+27-->/Users/shalithasamarasinghe/Projects/InterviewTask/Eyepax/Assement/app/src/main/AndroidManifest.xml:22:9-26:70
+28            android:name="com.shalitha.app.presentation.home.HomeActivity"
+28-->/Users/shalithasamarasinghe/Projects/InterviewTask/Eyepax/Assement/app/src/main/AndroidManifest.xml:23:13-75
+29            android:exported="true"
+29-->/Users/shalithasamarasinghe/Projects/InterviewTask/Eyepax/Assement/app/src/main/AndroidManifest.xml:24:13-36
+30            android:screenOrientation="portrait"
+30-->/Users/shalithasamarasinghe/Projects/InterviewTask/Eyepax/Assement/app/src/main/AndroidManifest.xml:25:13-49
+31            android:windowSoftInputMode="stateHidden|adjustResize" />
+31-->/Users/shalithasamarasinghe/Projects/InterviewTask/Eyepax/Assement/app/src/main/AndroidManifest.xml:26:13-67
+32        <activity
+32-->/Users/shalithasamarasinghe/Projects/InterviewTask/Eyepax/Assement/app/src/main/AndroidManifest.xml:28:9-30:52
+33            android:name="com.shalitha.app.presentation.login.LoginActivity"
+33-->/Users/shalithasamarasinghe/Projects/InterviewTask/Eyepax/Assement/app/src/main/AndroidManifest.xml:29:13-77
+34            android:screenOrientation="portrait" />
+34-->/Users/shalithasamarasinghe/Projects/InterviewTask/Eyepax/Assement/app/src/main/AndroidManifest.xml:30:13-49
+35        <activity
+35-->/Users/shalithasamarasinghe/Projects/InterviewTask/Eyepax/Assement/app/src/main/AndroidManifest.xml:32:9-34:52
+36            android:name="com.shalitha.app.presentation.sign_up.SignUpActivity"
+36-->/Users/shalithasamarasinghe/Projects/InterviewTask/Eyepax/Assement/app/src/main/AndroidManifest.xml:33:13-80
+37            android:screenOrientation="portrait" />
+37-->/Users/shalithasamarasinghe/Projects/InterviewTask/Eyepax/Assement/app/src/main/AndroidManifest.xml:34:13-49
+38        <activity
+38-->/Users/shalithasamarasinghe/Projects/InterviewTask/Eyepax/Assement/app/src/main/AndroidManifest.xml:35:9-45:20
+39            android:name="com.shalitha.app.presentation.splash.SplashActivity"
+39-->/Users/shalithasamarasinghe/Projects/InterviewTask/Eyepax/Assement/app/src/main/AndroidManifest.xml:36:13-79
+40            android:exported="true"
+40-->/Users/shalithasamarasinghe/Projects/InterviewTask/Eyepax/Assement/app/src/main/AndroidManifest.xml:37:13-36
+41            android:screenOrientation="portrait" >
+41-->/Users/shalithasamarasinghe/Projects/InterviewTask/Eyepax/Assement/app/src/main/AndroidManifest.xml:38:13-49
+42            <intent-filter>
+42-->/Users/shalithasamarasinghe/Projects/InterviewTask/Eyepax/Assement/app/src/main/AndroidManifest.xml:39:13-43:29
+43                <action android:name="android.intent.action.MAIN" />
+43-->/Users/shalithasamarasinghe/Projects/InterviewTask/Eyepax/Assement/app/src/main/AndroidManifest.xml:40:17-69
+43-->/Users/shalithasamarasinghe/Projects/InterviewTask/Eyepax/Assement/app/src/main/AndroidManifest.xml:40:25-66
+44
+45                <category android:name="android.intent.category.LAUNCHER" />
+45-->/Users/shalithasamarasinghe/Projects/InterviewTask/Eyepax/Assement/app/src/main/AndroidManifest.xml:42:17-77
+45-->/Users/shalithasamarasinghe/Projects/InterviewTask/Eyepax/Assement/app/src/main/AndroidManifest.xml:42:27-74
+46            </intent-filter>
+47        </activity>
+48
+49        <provider
+49-->[androidx.emoji2:emoji2:1.0.0] /Users/shalithasamarasinghe/.gradle/caches/transforms-2/files-2.1/76a55ef570bb8ab44a684bc919cbf281/jetified-emoji2-1.0.0/AndroidManifest.xml:26:9-34:20
+50            android:name="androidx.startup.InitializationProvider"
+50-->[androidx.emoji2:emoji2:1.0.0] /Users/shalithasamarasinghe/.gradle/caches/transforms-2/files-2.1/76a55ef570bb8ab44a684bc919cbf281/jetified-emoji2-1.0.0/AndroidManifest.xml:27:13-67
+51            android:authorities="com.shalitha.assessment.androidx-startup"
+51-->[androidx.emoji2:emoji2:1.0.0] /Users/shalithasamarasinghe/.gradle/caches/transforms-2/files-2.1/76a55ef570bb8ab44a684bc919cbf281/jetified-emoji2-1.0.0/AndroidManifest.xml:28:13-68
+52            android:exported="false" >
+52-->[androidx.emoji2:emoji2:1.0.0] /Users/shalithasamarasinghe/.gradle/caches/transforms-2/files-2.1/76a55ef570bb8ab44a684bc919cbf281/jetified-emoji2-1.0.0/AndroidManifest.xml:29:13-37
+53            <meta-data
+53-->[androidx.emoji2:emoji2:1.0.0] /Users/shalithasamarasinghe/.gradle/caches/transforms-2/files-2.1/76a55ef570bb8ab44a684bc919cbf281/jetified-emoji2-1.0.0/AndroidManifest.xml:31:13-33:52
+54                android:name="androidx.emoji2.text.EmojiCompatInitializer"
+54-->[androidx.emoji2:emoji2:1.0.0] /Users/shalithasamarasinghe/.gradle/caches/transforms-2/files-2.1/76a55ef570bb8ab44a684bc919cbf281/jetified-emoji2-1.0.0/AndroidManifest.xml:32:17-75
+55                android:value="androidx.startup" />
+55-->[androidx.emoji2:emoji2:1.0.0] /Users/shalithasamarasinghe/.gradle/caches/transforms-2/files-2.1/76a55ef570bb8ab44a684bc919cbf281/jetified-emoji2-1.0.0/AndroidManifest.xml:33:17-49
+56            <meta-data
+56-->[androidx.lifecycle:lifecycle-process:2.4.0] /Users/shalithasamarasinghe/.gradle/caches/transforms-2/files-2.1/e93036b1e8a3f831764421274fc3f6e6/jetified-lifecycle-process-2.4.0/AndroidManifest.xml:31:13-33:52
+57                android:name="androidx.lifecycle.ProcessLifecycleInitializer"
+57-->[androidx.lifecycle:lifecycle-process:2.4.0] /Users/shalithasamarasinghe/.gradle/caches/transforms-2/files-2.1/e93036b1e8a3f831764421274fc3f6e6/jetified-lifecycle-process-2.4.0/AndroidManifest.xml:32:17-78
+58                android:value="androidx.startup" />
+58-->[androidx.lifecycle:lifecycle-process:2.4.0] /Users/shalithasamarasinghe/.gradle/caches/transforms-2/files-2.1/e93036b1e8a3f831764421274fc3f6e6/jetified-lifecycle-process-2.4.0/AndroidManifest.xml:33:17-49
+59        </provider>
+60
+61        <service
+61-->[androidx.room:room-runtime:2.4.2] /Users/shalithasamarasinghe/.gradle/caches/transforms-2/files-2.1/bb53fcb85711af3b4d90767c29950f6b/room-runtime-2.4.2/AndroidManifest.xml:25:9-28:40
+62            android:name="androidx.room.MultiInstanceInvalidationService"
+62-->[androidx.room:room-runtime:2.4.2] /Users/shalithasamarasinghe/.gradle/caches/transforms-2/files-2.1/bb53fcb85711af3b4d90767c29950f6b/room-runtime-2.4.2/AndroidManifest.xml:26:13-74
+63            android:directBootAware="true"
+63-->[androidx.room:room-runtime:2.4.2] /Users/shalithasamarasinghe/.gradle/caches/transforms-2/files-2.1/bb53fcb85711af3b4d90767c29950f6b/room-runtime-2.4.2/AndroidManifest.xml:27:13-43
+64            android:exported="false" />
+64-->[androidx.room:room-runtime:2.4.2] /Users/shalithasamarasinghe/.gradle/caches/transforms-2/files-2.1/bb53fcb85711af3b4d90767c29950f6b/room-runtime-2.4.2/AndroidManifest.xml:28:13-37
+65    </application>
+66
+67</manifest>

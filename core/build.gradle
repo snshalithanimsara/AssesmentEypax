@@ -1,0 +1,72 @@
+apply plugin: 'com.android.library'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-kapt'
+
+dependencies {
+
+    implementation fileTree(dir: "libs", include: ["*.jar"])
+
+
+    // Dependency on a local library module
+    implementation project(Modules.network)
+    implementation project(Modules.presentation)
+
+
+    // Android support
+    implementation Androidx.appcompat
+    implementation Androidx.recyclerview
+    implementation Androidx.constraintlayout
+    implementation Androidx.material_design
+    implementation Androidx.cardview
+    implementation Androidx.coroutines
+    implementation Androidx.coroutines_android
+
+
+    //Ktx
+    implementation Ktx.kotlinCoreKtx
+
+
+    // Multidex
+    implementation Androidx.mulidex
+
+
+    // Life cycle
+    implementation Lifecycle.extensions
+    kapt Lifecycle.compiler
+
+
+    implementation Koin.android
+    implementation Koin.viewmodel
+    implementation Koin.scope
+    implementation Koin.ext
+
+
+    //coil image loading lib
+    implementation Externallib.coilImageLoader
+
+    //Google Gson
+    implementation Externallib.googleGson
+
+
+    //Spin Kit
+    implementation Externallib.spinKitView
+
+    //Custom Toast Messages
+    implementation Externallib.toastyForCustomToast
+
+
+}
+
+android {
+    compileSdkVersion Versions.compileSdk
+
+    buildTypes {
+        release {}
+        debug {}
+    }
+
+    defaultConfig {
+        minSdkVersion Versions.minSdk
+        targetSdkVersion Versions.targetSdk
+    }
+}

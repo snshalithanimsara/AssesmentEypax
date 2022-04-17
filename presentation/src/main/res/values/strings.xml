@@ -1,0 +1,47 @@
+<resources>
+    <string name="app_name" translatable="false">Assessment Task</string>
+
+    <string name="msg_no_internet">We are having trouble reaching the network. \n
+Please check your connection.</string>
+
+
+    <string name="action_ok">Ok</string>
+    <string name="msg_something_went_wrong">Oops, Something Went Wrong..Please Try Again!</string>
+    <string name="title_alert">Alert</string>
+    <string name="action_cancel">Cancel</string>
+    <string name="action_login">Login</string>
+    <string name="action_filters">Filters</string>
+    <string name="action_retry">Retry</string>
+    <string name="label_sign_up">Sign Up</string>
+    <string name="hint_first_name">First Name</string>
+    <string name="hint_last_name">Last Name</string>
+    <string name="hint_password">Password</string>
+    <string name="hint_confirm_password">Confirm Password</string>
+    <string name="action_sign_up">Sign Up</string>
+    <string name="label_sign_in">Sign In</string>
+    <string name="hint_e_mail">E-mail</string>
+    <string name="action_sign_in">Sign In</string>
+    <string name="hint_search">Search.....</string>
+    <string name="label_breaking_news">Breaking News</string>
+    <string name="action_view_all">View All</string>
+    <string name="label_top_news">Top News</string>
+    <string name="label_filter">Filter</string>
+    <string name="action_reset">Reset</string>
+    <string name="label_sort_by">Sort By</string>
+    <string name="aciton_save">Save</string>
+    <string name="msg_first_name_required">First Name Required!</string>
+    <string name="msg_last_name_required">Last Name Required!</string>
+    <string name="msg_email_required">Email Required!</string>
+    <string name="msg_invalid_email">Invalid Email!</string>
+    <string name="msg_password_required">Password Required!</string>
+    <string name="msg_password_not_matching">Password Doesn\'t Match!</string>
+    <string name="msg_signed_up_sucessful">Successfully Signed Up!</string>
+    <string name="msg_signed_up_failed">Failed to Create User!</string>
+    <string name="msg_user_not_found">Cannot Find a User With This Email!</string>
+    <string name="msg_password_incorrect">Password Incorrect!</string>
+    <string name="msg_login_successful">Login Successfully!</string>
+    <string name="label_news_wire_app">News Wire App</string>
+    <string name="label_by">by</string>
+
+</resources>
+

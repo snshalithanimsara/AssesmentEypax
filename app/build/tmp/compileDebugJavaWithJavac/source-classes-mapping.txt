@@ -1,0 +1,52 @@
+com/shalitha/app/databinding/ActivityNewsDetailPageBinding.java
+ com.shalitha.app.databinding.ActivityNewsDetailPageBinding
+com/shalitha/app/databinding/ActivityNewsListingPageBinding.java
+ com.shalitha.app.databinding.ActivityNewsListingPageBinding
+com/shalitha/app/databinding/ActivityLoginBinding.java
+ com.shalitha.app.databinding.ActivityLoginBinding
+androidx/databinding/DataBinderMapperImpl.java
+ androidx.databinding.DataBinderMapperImpl
+com/shalitha/app/databinding/ActivityHomePageBinding.java
+ com.shalitha.app.databinding.ActivityHomePageBinding
+com/shalitha/app/databinding/ItemBreakingNewsListingBindingImpl.java
+ com.shalitha.app.databinding.ItemBreakingNewsListingBindingImpl
+androidx/databinding/library/baseAdapters/BR.java
+ androidx.databinding.library.baseAdapters.BR
+com/shalitha/app/databinding/ItemTopNewsListingBindingImpl.java
+ com.shalitha.app.databinding.ItemTopNewsListingBindingImpl
+com/shalitha/app/databinding/ActivitySignUpBinding.java
+ com.shalitha.app.databinding.ActivitySignUpBinding
+com/shalitha/app/databinding/ActivitySignUpBindingImpl.java
+ com.shalitha.app.databinding.ActivitySignUpBindingImpl
+com/shalitha/app/DataBindingTriggerClass.java
+ com.shalitha.app.DataBindingTriggerClass
+com/shalitha/app/BR.java
+ com.shalitha.app.BR
+com/shalitha/app/databinding/ActivityLoginBindingImpl.java
+ com.shalitha.app.databinding.ActivityLoginBindingImpl
+com/shalitha/app/databinding/ActivitySplashBinding.java
+ com.shalitha.app.databinding.ActivitySplashBinding
+com/shalitha/app/databinding/ItemShimmerTopNewsListingBindingImpl.java
+ com.shalitha.app.databinding.ItemShimmerTopNewsListingBindingImpl
+com/shalitha/app/BuildConfig.java
+ com.shalitha.app.BuildConfig
+com/shalitha/app/databinding/ItemTopNewsListingBinding.java
+ com.shalitha.app.databinding.ItemTopNewsListingBinding
+com/shalitha/app/databinding/ItemBreakingNewsListingBinding.java
+ com.shalitha.app.databinding.ItemBreakingNewsListingBinding
+com/shalitha/app/databinding/ItemShimmerBreakingNewsListingBindingImpl.java
+ com.shalitha.app.databinding.ItemShimmerBreakingNewsListingBindingImpl
+com/shalitha/app/databinding/ItemShimmerTopNewsListingBinding.java
+ com.shalitha.app.databinding.ItemShimmerTopNewsListingBinding
+com/shalitha/app/DataBinderMapperImpl.java
+ com.shalitha.app.DataBinderMapperImpl
+ com.shalitha.app.DataBinderMapperImpl$InnerBrLookup
+ com.shalitha.app.DataBinderMapperImpl$InnerLayoutIdLookup
+com/shalitha/app/databinding/BottomSheetDialogApplyFilterBinding.java
+ com.shalitha.app.databinding.BottomSheetDialogApplyFilterBinding
+com/shalitha/app/databinding/ActivitySplashBindingImpl.java
+ com.shalitha.app.databinding.ActivitySplashBindingImpl
+androidx/databinding/DataBindingComponent.java
+ androidx.databinding.DataBindingComponent
+com/shalitha/app/databinding/ItemShimmerBreakingNewsListingBinding.java
+ com.shalitha.app.databinding.ItemShimmerBreakingNewsListingBinding

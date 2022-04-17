@@ -1,0 +1,125 @@
+apply plugin: 'com.android.application'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-kapt'
+apply plugin: 'kotlin-parcelize'
+
+android {
+    compileSdkVersion Versions.compileSdk
+    buildToolsVersion Versions.buildToolsVersion
+
+    defaultConfig {
+        applicationId ApplicationId.id
+        minSdkVersion Versions.minSdk
+        targetSdkVersion Versions.targetSdk
+        versionCode Releases.versionCode
+        versionName Releases.versionName
+        multiDexEnabled true
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+
+    }
+
+
+    buildTypes {
+
+        release {
+            minifyEnabled false
+            debuggable false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+
+        debug {
+            debuggable true
+            minifyEnabled false
+        }
+
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+
+    kotlinOptions {
+        jvmTarget = JavaVersion.VERSION_1_8
+    }
+
+    buildFeatures {
+        viewBinding = true
+        dataBinding true
+    }
+}
+
+dependencies {
+
+    implementation fileTree(dir: "libs", include: ["*.jar"])
+
+
+    // Dependency on a local library module
+    implementation project(Modules.core)
+    implementation project(Modules.network)
+    implementation project(Modules.presentation)
+    implementation project(Modules.localDb)
+
+
+    // Android support
+    implementation Androidx.appcompat
+    implementation Androidx.recyclerview
+    implementation Androidx.constraintlayout
+    implementation Androidx.material_design
+    implementation Ktx.kotlinCoreKtx
+    implementation Androidx.cardview
+    implementation Androidx.coroutines
+    implementation Androidx.coroutines_android
+    implementation Androidx.swipeRefresh
+
+    //ktx
+    implementation Ktx.liveDataKtx
+    implementation Ktx.lifeCycleKtx
+    implementation Ktx.fragmentKtx
+    implementation Ktx.activityKtx
+    implementation Ktx.fragment
+
+
+    // Multidex
+    implementation Androidx.mulidex
+
+
+    // Life cycle
+    implementation Lifecycle.extensions
+    kapt Lifecycle.compiler
+
+
+    // OkHttp and Retrofit
+    implementation Okhttp.runtime
+    implementation Okhttp.logging
+    implementation Retrofit.runtime
+    implementation Retrofit.rxjava2
+    implementation Retrofit.gson
+
+    // RxJava and RxAndroid
+    implementation Reactivex.rxjava
+
+
+    //Koin for DI
+    implementation Koin.android
+    implementation Koin.viewmodel
+    implementation Koin.scope
+    implementation Koin.ext
+
+    //coil image loading lib
+    implementation Externallib.coilImageLoader
+
+
+    //Lottie animations
+    implementation Externallib.lottieAnimations
+
+
+    //Shimmer Loading
+    implementation Externallib.facebookShimmerLoading
+
+    //Lottie animation
+    implementation Externallib.lottieAnimations
+
+    //Custom Toast Messages
+    implementation Externallib.toastyForCustomToast
+
+}

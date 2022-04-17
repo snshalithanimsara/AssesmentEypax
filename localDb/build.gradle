@@ -1,0 +1,54 @@
+apply plugin: 'com.android.library'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-kapt'
+
+
+dependencies {
+
+    implementation fileTree(dir: "libs", include: ["*.jar"])
+
+
+    implementation Kotlin.stdlib
+
+
+    //Koin for DI
+    implementation Koin.android
+    implementation Koin.scope
+    implementation Koin.ext
+
+
+    //Room
+    implementation RoomDb.roomRuntime
+    kapt RoomDb.roomAnnotationProcessor
+
+
+    //Ktx
+    implementation Ktx.roomKtx
+
+
+}
+
+android {
+    compileSdkVersion Versions.compileSdk
+
+    defaultConfig {
+        minSdkVersion Versions.minSdk
+        targetSdkVersion Versions.targetSdk
+    }
+
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            debuggable false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+
+        debug {
+            debuggable true
+            minifyEnabled false
+        }
+    }
+
+
+}
